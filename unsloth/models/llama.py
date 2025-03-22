@@ -1642,6 +1642,7 @@ class FastLlamaModel:
         random_state      = 3407,
         max_lora_rank     = 16,
         disable_log_stats = False,
+        max_num_seqs      = None,
         num_scheduler_steps = 1,
         **kwargs,
     ):
@@ -1810,6 +1811,7 @@ class FastLlamaModel:
                 max_lora_rank          = max_lora_rank,
                 disable_log_stats      = disable_log_stats,
                 use_bitsandbytes       = load_in_4bit,
+                max_num_seqs           = max_num_seqs,
                 num_scheduler_steps    = num_scheduler_steps,
             )
             for allowed_arg in allowed_args:
