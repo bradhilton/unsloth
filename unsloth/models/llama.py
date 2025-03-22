@@ -1642,6 +1642,7 @@ class FastLlamaModel:
         random_state      = 3407,
         max_lora_rank     = 16,
         disable_log_stats = False,
+        num_scheduler_steps = 1,
         **kwargs,
     ):
         os.environ["UNSLOTH_USE_NEW_MODEL"] = "0"
@@ -1809,6 +1810,7 @@ class FastLlamaModel:
                 max_lora_rank          = max_lora_rank,
                 disable_log_stats      = disable_log_stats,
                 use_bitsandbytes       = load_in_4bit,
+                num_scheduler_steps    = num_scheduler_steps,
             )
             for allowed_arg in allowed_args:
                 if allowed_arg not in load_vllm_kwargs and allowed_arg in kwargs:
